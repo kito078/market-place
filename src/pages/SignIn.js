@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { ReactComponent as ArrowRightIcon } from "../../src/assets/svg/keyboardArrowRightIcon.svg";
 import visibilityIcon from "../../src/assets/svg/visibilityIcon.svg";
+import { toast } from "react-toastify";
 
 function SignIn() {
   const [showPassword, setShowPassword] = useState(false);
