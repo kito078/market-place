@@ -8,6 +8,7 @@ import Offers from "./pages/Offers";
 import Profile from "./pages/Profile";
 import Navbar from "./pages/components/Navbar";
 import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
