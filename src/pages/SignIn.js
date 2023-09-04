@@ -24,16 +24,20 @@ function SignIn() {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    const auth = getAuth();
+    try {
+      const auth = getAuth();
 
-    const userCredintial = await signInWithEmailAndPassword(
-      auth,
-      email,
-      password
-    );
+      const userCredintial = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
 
-    if (userCredintial.user) {
-      navigate("/");
+      if (userCredintial.user) {
+        navigate("/");
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
