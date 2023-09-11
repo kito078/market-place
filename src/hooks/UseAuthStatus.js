@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 
-function UseAuthStatus() {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+export const UseAuthStatus = () => {
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [checkingStatus, setCheckingStatus] = useState(true);
 
-export default UseAuthStatus
+  useEffect(() => {
+    if (isMounted) {
+      const auth = getAuth();
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          setLoggedIn(true);
+        }
+        setCheckingStatus(false);
+      });
+    }
+  });
+  return { loggedIn, checkingStatus };
+};
