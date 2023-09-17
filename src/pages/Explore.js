@@ -1,6 +1,7 @@
 import React from "react";
 import rentCategoryImage from "../assets/jpg/rentCategoryImage.jpg";
 import sellCategoryImage from "../assets/jpg/sellCategoryImage.jpg";
+import { Link } from "react-router-dom";
 
 function Explore() {
   return (
@@ -19,6 +20,15 @@ function Explore() {
               alt="rent"
               className="exploreCategoryImg"
             />
+            <p className="exploreCategoryName">Places for rent</p>
+          </Link>
+          <Link to="/category/sell">
+            <img
+              src={sellCategoryImage}
+              alt="rent"
+              className="exploreCategoryImg"
+            />
+            <p className="exploreCategoryName">Places for rent</p>
           </Link>
         </div>
       </main>
