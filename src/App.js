@@ -6,10 +6,12 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Offers from "./pages/Offers";
 import Profile from "./pages/Profile";
-import Navbar from "./pages/components/Navbar";
+
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import PrivateRoute from "./pages/components/PrivateRoute";
+
+import PrivateRoute from "./components/PrivateRoute";
+import Navbar from "./components/Navbar";
 import Category from "./pages/Category";
 
 function App() {
