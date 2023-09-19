@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import Spinner from "../components/Spinner";
@@ -57,13 +57,42 @@ function CreateListing() {
     };
   }, [isMounted]);
 
+  const onSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  const onMutate = (e) => {
+    e.preventDefault();
+  };
+
   if (loading) {
     return <Spinner />;
   }
 
   return (
     <div>
-      <h1></h1>
+      <div className="profile">
+        <header>
+          <p className="pageHeader">Create a Listing</p>
+        </header>
+
+        <main>
+          <form onSubmit={onSubmit}>
+            <label className="formLabel">Sell / Rent</label>
+            <div className="formButtons">
+              <button
+                type="button"
+                className={type === "sale" ? "formButtonActive" : "formButton"}
+                id="type"
+                value="sale"
+                onClick={onMutate}
+              >
+                sell
+              </button>
+            </div>
+          </form>
+        </main>
+      </div>
     </div>
   );
 }
