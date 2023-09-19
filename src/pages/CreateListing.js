@@ -89,6 +89,15 @@ function CreateListing() {
               >
                 sell
               </button>
+              <button
+                type="button"
+                className={type === "rent" ? "formButtonActive" : "formButton"}
+                id="type"
+                value="rent"
+                onClick={onMutate}
+              >
+                sell
+              </button>
             </div>
           </form>
         </main>
